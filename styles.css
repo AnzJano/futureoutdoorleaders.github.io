@@ -1,11 +1,13 @@
 :root{
-  --bg:#07120a;                 /* deep woods */
+  /* Woods palette */
+  --bg:#07120a;                 /* deep forest base (NOT blue) */
   --text:#eaf0ff;
   --muted:#b7c6bf;
   --line:rgba(255,255,255,.12);
 
   --wood:#2F5D3A;               /* woodland green */
-  --moss:#6B8F5A;               /* moss */
+  --moss:#6B8F5A;               /* moss/sage */
+
   --shadow: 0 12px 30px rgba(0,0,0,.35);
   --radius: 18px;
   --max: 980px;
@@ -17,10 +19,13 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
+
+  /* GREEN background (base + green glows) */
   background:
-    radial-gradient(1200px 700px at 15% -10%, rgba(47,93,58,.50), transparent 60%),
-    radial-gradient(1000px 600px at 85% 0%, rgba(107,143,90,.32), transparent 60%),
+    radial-gradient(1200px 700px at 15% -10%, rgba(47,93,58,.55), transparent 60%),
+    radial-gradient(1000px 600px at 85% 0%, rgba(107,143,90,.35), transparent 60%),
     var(--bg);
+
   line-height:1.6;
 }
 a{color:inherit}
@@ -34,11 +39,11 @@ h2{font-size: clamp(22px, 2.2vw, 30px)}
 p{margin:0 0 12px}
 .muted{color:var(--muted)}
 
-/* Header (match your HTML class) */
+/* Header */
 .site-header{
   position:sticky; top:0; z-index:50;
   backdrop-filter: blur(10px);
-  background: rgba(7,18,10,.65);
+  background: rgba(7,18,10,.65);     /* woods tint */
   border-bottom: 1px solid var(--line);
 }
 .topbar{
@@ -50,11 +55,11 @@ p{margin:0 0 12px}
   width:38px; height:38px; border-radius:12px;
   display:grid; place-items:center;
   border:1px solid var(--line);
-  background: linear-gradient(135deg, rgba(47,93,58,.38), rgba(107,143,90,.28));
+  background: linear-gradient(135deg, rgba(47,93,58,.40), rgba(107,143,90,.28));
   font-weight:800;
 }
 
-/* Nav (match your HTML class) */
+/* Nav */
 .nav{display:flex; gap:14px}
 .nav a{color:var(--muted); text-decoration:none}
 .nav a:hover{color:var(--text)}
@@ -62,7 +67,7 @@ p{margin:0 0 12px}
   .nav{display:none;}
 }
 
-/* Buttons (match your HTML class) */
+/* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:10px 14px; border-radius:999px;
@@ -72,15 +77,17 @@ p{margin:0 0 12px}
   transition: transform .15s ease, background .15s ease;
 }
 .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.07)}
+
+/* ✅ IMPORTANT FIX: matches class="btn btn-primary" */
 .btn-primary{
-  border-color: rgba(47,93,58,.65);
-  background: linear-gradient(135deg, rgba(47,93,58,.34), rgba(107,143,90,.24));
+  border-color: rgba(47,93,58,.70);
+  background: linear-gradient(135deg, rgba(47,93,58,.36), rgba(107,143,90,.24));
 }
 .btn-ghost{
   background: rgba(255,255,255,.03);
 }
 
-/* Hero centered */
+/* Hero (center the first section) */
 .hero{
   min-height: calc(100vh - 64px);
   display:grid;
@@ -131,7 +138,7 @@ p{margin:0 0 12px}
   color: var(--muted);
   font-size: 14px;
 }
-.footer-inner{display:flex; justify-content:center;}
+.footer-inner{display:flex; justify-content:center}
 
 /* Disabled links */
 [aria-disabled="true"]{opacity:.65; pointer-events:none; text-decoration:none}
