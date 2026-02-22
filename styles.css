@@ -142,3 +142,20 @@ p{margin:0 0 12px}
 
 /* Disabled links */
 [aria-disabled="true"]{opacity:.65; pointer-events:none; text-decoration:none}
+
+/* Stagger mission paragraphs left-to-right */
+.step{
+  text-align: left;
+}
+
+.step-1{ margin-left: 0; }
+.step-2{ margin-left: 22px; }
+.step-3{ margin-left: 44px; }
+
+/* Keep it readable on phones */
+@media (max-width: 600px){
+  .step, .step-1, .step-2, .step-3{
+    margin-left: 0 !important;
+    text-align: center;
+  }
+}
