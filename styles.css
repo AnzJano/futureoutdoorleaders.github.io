@@ -110,7 +110,7 @@ p{margin:0 0 12px}
   margin: 0 auto 14px;
   max-width: 75ch;
   color: var(--muted);
-  font-size: 17px;
+  font-size: clamp(19px, 1.3vw, 22px);
 }
 .cta{
   display:flex; gap:10px; flex-wrap:wrap;
