@@ -2,11 +2,15 @@
   --bg:#0b1220;
   --panel:#0f1a2e;
   --panel2:#0c1629;
+
   --text:#eaf0ff;
   --muted:#a9b6d3;
   --line:rgba(255,255,255,.10);
-  --accent:#5eead4;
-  --accent2:#60a5fa;
+
+  /* WOODLAND GREEN THEME */
+  --accent:#2F5D3A;   /* woodland green */
+  --accent2:#6B8F5A;  /* moss/sage */
+
   --shadow: 0 12px 30px rgba(0,0,0,.35);
   --radius: 18px;
   --max: 1120px;
@@ -18,9 +22,10 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background: radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,.25), transparent 60%),
-              radial-gradient(900px 500px at 80% 0%, rgba(94,234,212,.18), transparent 60%),
-              var(--bg);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(47,93,58,.40), transparent 60%),
+    radial-gradient(900px 500px at 80% 0%, rgba(107,143,90,.26), transparent 60%),
+    var(--bg);
   line-height:1.55;
 }
 a{color:inherit}
@@ -51,7 +56,7 @@ p{margin:0 0 12px}
 .brand-mark{
   width:38px; height:38px; border-radius:12px;
   display:grid; place-items:center;
-  background: linear-gradient(135deg, rgba(94,234,212,.25), rgba(96,165,250,.25));
+  background: linear-gradient(135deg, rgba(47,93,58,.32), rgba(107,143,90,.26));
   border:1px solid var(--line);
   font-weight:800;
 }
@@ -74,14 +79,14 @@ p{margin:0 0 12px}
 }
 .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
 .btn-primary{
-  border-color: rgba(94,234,212,.35);
-  background: linear-gradient(135deg, rgba(94,234,212,.20), rgba(96,165,250,.20));
+  border-color: rgba(47,93,58,.60);
+  background: linear-gradient(135deg, rgba(47,93,58,.30), rgba(107,143,90,.22));
 }
 .btn-ghost{color:var(--text);}
 
 /* Hero */
 .hero{
-  min-height: calc(100vh - 70px); /* centers the first screen under the sticky header */
+  min-height: calc(100vh - 70px);
   display:grid;
   place-items:center;
   padding:72px 0 44px;
@@ -124,14 +129,14 @@ p{margin:0 0 12px}
 
 .callout{
   border-radius: var(--radius);
-  border:1px solid var(--line);
+  border:1px solid rgba(47,93,58,.35);
   background: rgba(255,255,255,.03);
   padding:16px;
 }
 .callout ul{margin:10px 0 0; padding-left: 18px}
 .callout li{margin:6px 0; color: var(--muted)}
 
-/* Cards (optional if you add them later) */
+/* Cards */
 .cards{
   display:grid; gap:14px;
   grid-template-columns: 1fr;
