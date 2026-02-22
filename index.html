@@ -5,31 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Future Outdoor Leaders</title>
   <meta name="description" content="Future Outdoor Leaders Youth Fishing Tournament helps kids build patience, teamwork, confidence, and conservation values through hands-on outdoor experiences." />
+
+  <!-- Keep your external stylesheet if you want -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- GUARANTEED centering + clean styling (you can move this into styles.css later) -->
+  <style>
+    :root{
+      --bg:#0b1220;
+      --text:#eaf0ff;
+      --muted:#a9b6d3;
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(96,165,250,.25), transparent 60%),
+        radial-gradient(1000px 600px at 85% 0%, rgba(94,234,212,.18), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+
+    /* Top bar */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .container{max-width: 980px; margin:0 auto; padding: 0 18px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0; gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      display:grid; place-items:center;
+      border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(94,234,212,.22), rgba(96,165,250,.22));
+      font-weight:800;
+    }
+    nav{display:flex; gap:14px;}
+    nav a{color:var(--muted); text-decoration:none;}
+    nav a:hover{color:var(--text);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:999px;
+      text-decoration:none; font-weight:700;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border-color: rgba(94,234,212,.35);
+      background: linear-gradient(135deg, rgba(94,234,212,.18), rgba(96,165,250,.18));
+    }
+
+    /* HERO: centered on the screen */
+    .hero{
+      min-height: calc(100vh - 64px); /* subtract sticky header */
+      display:grid;
+      place-items:center;
+      padding: 36px 0 54px;
+      text-align:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    h1{margin:0 0 10px; font-size: clamp(30px, 4vw, 52px); line-height:1.15;}
+    .lead{
+      margin: 0 auto 14px;
+      max-width: 75ch;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:center;
+      margin-top: 16px;
+    }
+
+    /* Sections */
+    section.block{padding: 56px 0;}
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding: 18px;
+    }
+    h2{margin:0 0 10px; font-size: clamp(22px, 2.2vw, 30px);}
+    p{margin:0 0 12px;}
+
+    /* Contact */
+    .contact{
+      display:grid; gap:14px;
+    }
+    .row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+    .label{color:var(--muted); font-size:13px;}
+    footer{
+      border-top:1px solid var(--line);
+      padding: 18px 0 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width:720px){
+      nav{display:none;}
+      .topbar{justify-content:space-between;}
+    }
+  </style>
 </head>
 
 <body>
-  <header class="header">
-    <div class="container header-inner">
+  <header>
+    <div class="container topbar">
       <a class="brand" href="#top" aria-label="Future Outdoor Leaders home">
-        <span class="brand-mark" aria-hidden="true">FOL</span>
-        <span class="brand-name">Future Outdoor Leaders</span>
+        <span class="mark" aria-hidden="true">FOL</span>
+        <strong>Future Outdoor Leaders</strong>
       </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="btn btn-primary" href="#contact">Get Involved</a>
+      <a class="btn primary" href="#contact">Get Involved</a>
     </div>
   </header>
 
   <main id="top">
-    <!-- Mission (CENTERED first page) -->
+    <!-- CENTERED MISSION -->
     <section class="hero">
-      <div class="container hero-centered">
-        <p class="eyebrow">Youth Fishing Tournament • Outdoors • Conservation</p>
+      <div class="container">
+        <div class="eyebrow">Youth Fishing Tournament • Outdoors • Conservation</div>
         <h1>Our Mission</h1>
 
         <p class="lead">
@@ -37,84 +159,68 @@
           respect, and be knowledgeable about our environment.
         </p>
         <p class="lead">
-          The Youth Fishing Tournament brings kids together to learn patience, teamwork, and confidence
-          without phones, tablets, or constant digital noise.
+          The Youth Fishing Tournament brings kids together to learn patience, teamwork, and confidence without phones,
+          tablets, or constant digital noise.
         </p>
         <p class="lead">
-          Our activities give the youth hands-on experiences and the space needed to build real world skills,
-          resilience, and a sense of responsibility to each other and the environment.
+          Our activities give the youth hands-on experiences and the space needed to build real world skills, resilience,
+          and a sense of responsibility to each other and the environment.
         </p>
         <p class="lead">
-          We are dedicated to introducing kids to the outdoors, teaching them the value of conservation,
-          building a community, and giving real-world experiences away from screens.
+          We are dedicated to introducing kids to the outdoors, teaching them the value of conservation, building a community,
+          and giving real-world experiences away from screens.
         </p>
 
-        <div class="cta-row cta-centered">
-          <a class="btn btn-primary" href="#contact">Volunteer / Partner</a>
-          <a class="btn btn-ghost" href="#about">Learn more</a>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Volunteer / Partner</a>
+          <a class="btn" href="#about">Learn more</a>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section section-alt">
+    <!-- ABOUT -->
+    <section id="about" class="block">
       <div class="container">
-        <div class="section-head">
-          <h2>About the Tournament</h2>
-          <p class="muted">Hands-on support, real learning, and a community built around the outdoors.</p>
-        </div>
-
-        <div class="callout">
+        <h2>About the Tournament</h2>
+        <div class="panel">
           <p>
             Each year, we equip young anglers with the essentials they need to begin their outdoor journey.
-            Last year alone, participants received sleeping bags, fishing poles, tackle boxes, tents,
-            flashlights, and other gear from Bass Pro and a total of over $4,800.00.
+            Last year alone, participants received sleeping bags, fishing poles, tackle boxes, tents, flashlights,
+            and other gear from Bass Pro and a total of over $4,800.00.
           </p>
           <p>
-            Alongside providing essentials, we make it a priority to educate participants about the Department
-            of Natural Resources and the importance of following state fishing rules and regulations.
-            We instill the ethical and legal practices of the DNR, including minimum size, daily limits,
-            life preserver safety, and maintaining fish in a healthy condition.
+            Alongside providing essentials, we make it a priority to educate participants about the Department of Natural Resources
+            and the importance of following state fishing rules and regulations. We instill the ethical and legal practices of the DNR,
+            including minimum size, daily limits, life preserver safety, and maintaining fish in a healthy condition.
           </p>
           <p>
-            By providing both hands-on learning and the tools to continue fishing long after the tournament ends,
-            we're investing in a lifelong love of the outdoors and building a community rooted in respect for nature,
-            adventure, and shared tradition.
+            By providing both hands-on learning and the tools to continue fishing long after the tournament ends, we're investing
+            in a lifelong love of the outdoors and building a community rooted in respect for nature, adventure, and shared tradition.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container split">
-        <div>
-          <h2>Contact</h2>
-          <p class="muted">Want to volunteer, donate gear, or partner with us? Reach out.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="block">
+      <div class="container contact">
+        <h2>Contact</h2>
+        <p class="label">Want to volunteer, donate gear, or partner with us? Reach out.</p>
 
-          <div class="contact-list">
-            <div><span class="label">Email</span> <a href="mailto:hello@futureoutdoorleaders.org">hello@futureoutdoorleaders.org</a></div>
-            <div><span class="label">Volunteer form</span> <a href="#" target="_blank" rel="noreferrer">Add your Google Form link</a></div>
-            <div><span class="label">Social</span> <a href="#" target="_blank" rel="noreferrer">Add Instagram link</a></div>
-          </div>
+        <div class="row">
+          <a class="btn primary" href="mailto:hello@futureoutdoorleaders.org">Email Us</a>
+          <a class="btn" href="#" aria-disabled="true" title="Add your Google Form link when ready">Volunteer Form (soon)</a>
+          <a class="btn" href="#" aria-disabled="true" title="Add your Instagram link when ready">Instagram (soon)</a>
         </div>
 
-        <div class="callout">
-          <h3>Get involved</h3>
-          <ul>
-            <li>Volunteer at the tournament</li>
-            <li>Donate gear or sponsor a youth angler</li>
-            <li>Partner for conservation education</li>
-          </ul>
-        </div>
+        <p class="label">Email: <a href="mailto:hello@futureoutdoorleaders.org">hello@futureoutdoorleaders.org</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Future Outdoor Leaders</p>
-      <p class="muted small">Built on GitHub Pages</p>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Future Outdoor Leaders
     </div>
   </footer>
 
